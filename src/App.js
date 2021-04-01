@@ -1,5 +1,6 @@
 import { gql, useQuery } from '@apollo/client'
 import React from 'react'
+import VideoCard from './components/VideoCard'
 
 function App() {
   const { loading, error, data } = useQuery(gql`
@@ -25,7 +26,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">{`Hello world ! `}</header>
+      <header className="App-header">
+        {data.allVideos.items.map((video) => (
+          <div key={video.id}>
+            <VideoCard video={video} />
+          </div>
+        ))}
+      </header>
     </div>
   )
 }
