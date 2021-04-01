@@ -1,13 +1,18 @@
 import { gql, useQuery } from '@apollo/client'
 import React from 'react'
-import './App.css'
 
 function App() {
   const { loading, error, data } = useQuery(gql`
     {
       allVideos(limit: 5) {
         items {
+          id
           name
+          poster
+          Tags {
+            id
+            name
+          }
         }
       }
     }
