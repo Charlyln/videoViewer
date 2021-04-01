@@ -1,15 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider
-} from '@apollo/client'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import './index.css'
 import App from './App'
 
-const key = 'x-account-key'
-const keyValue = 'SyT0uHf3I'
+const key = process.env.REACT_APP_KEY
+const keyValue = process.env.REACT_APP_KEYVALUE
 
 const client = new ApolloClient({
   uri: 'https://staging-graphql-service.onrewind.tv/graphql',
