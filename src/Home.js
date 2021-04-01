@@ -2,7 +2,7 @@ import { gql, useQuery } from '@apollo/client'
 import React from 'react'
 import VideoCard from './components/VideoCard'
 
-function App() {
+function Home() {
   const { loading, error, data } = useQuery(gql`
     {
       allVideos(limit: 5) {
@@ -37,4 +37,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
