@@ -5,6 +5,7 @@ import Home from './components/home/Home'
 import Live from './components/live/Live'
 import Funzone from './components/funzone/Funzone'
 import Testimonials from './components/testimonials/Testimonials'
+import VideoDetails from './components/utils/VideoDetails'
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
         <Route path="/live" component={Live} />
         <Route path="/funzone" component={Funzone} />
         <Route path="/testimonials" component={Testimonials} />
+        <Route path="/video/:id" component={VideoDetails} />
       </Switch>
     </BrowserRouter>
   )
