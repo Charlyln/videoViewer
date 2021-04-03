@@ -1,28 +1,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import style from './VideoCard.module.css'
+import styles from './VideoCard.module.css'
 
 function VideoCard({ video }) {
   const { name, poster, Tags, id } = video
 
   return (
-    <div className={style.card}>
-      <Link to={`/video/${id}`}>
+    <Link to={`/video/${id}`}>
+      <div className="max-w-sm bg-gray-800 shadow-lg rounded-lg overflow-hidden my-4">
         <img
-          className={style.img}
+          className="w-full h-56 object-cover object-center"
           src={poster || 'https://via.placeholder.com/300x168'}
           alt={name}
         />
-        <div>
-          <h4>
-            <b>{name}</b>
-          </h4>
-          {Tags.map((tag) => (
-            <p key={tag.id}>{tag.name}</p>
-          ))}
+        <div className="py-4 px-6">
+          <div className={styles.title}>
+            <h3 className="text-2xl font-semibold text-white whitespace-nowrap">
+              {name}
+            </h3>
+          </div>
+          {Tags.length === 0 ? (
+            <p className="text-1xl font-semibold text-white whitespace-nowrap line-through">
+              {`Tags`}
+            </p>
+          ) : (
+            Tags.map((tag) => (
+              <p
+                key={tag.id}
+                className="text-1xl font-semibold text-white whitespace-nowrap"
+              >
+                {tag.name}
+              </p>
+            ))
+          )}
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   )
 }
 
