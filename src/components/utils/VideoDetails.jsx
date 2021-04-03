@@ -28,18 +28,42 @@ function VideoDetails() {
   }
 
   return (
-    <div>
-      <img
-        style={{ width: '100%' }}
-        src={poster || 'https://via.placeholder.com/400'}
-        alt={name}
-      />
-      <h1>{name}</h1>
-      {Tags.map((tag) => (
-        <p key={tag.name}>{tag.name}</p>
-      ))}
-      <button onClick={goPreviousPage}>retour</button>
-    </div>
+    <>
+      <div className=" bg-gray-800 shadow-lg rounded-lg overflow-hidden my-10 mx-10">
+        <img
+          className="w-full object-cover object-center"
+          src={poster || 'https://via.placeholder.com/300x168'}
+          alt={name}
+        />
+        <div className="py-4 px-6">
+          <h3 className="text-2xl font-semibold text-white whitespace-nowrap">
+            {name}
+          </h3>
+        </div>
+        {Tags.length === 0 ? (
+          <h1 className="text-1xl font-semibold text-white py-2 px-2  line-through">
+            {`Tags`}
+          </h1>
+        ) : (
+          Tags.map((tag) => (
+            <h1
+              key={tag.id}
+              className="text-1xl font-semibold text-white py-2 px-2 "
+            >
+              {tag.name}
+            </h1>
+          ))
+        )}
+      </div>
+      <div className="my-10 mx-10">
+        <button
+          className=" hover:text-gray-300 hover:bg-gray-500 bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium "
+          onClick={goPreviousPage}
+        >
+          retour
+        </button>
+      </div>
+    </>
   )
 }
 
