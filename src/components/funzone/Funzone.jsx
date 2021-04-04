@@ -1,5 +1,5 @@
-import React from 'react'
 import { gql, useQuery } from '@apollo/client'
+import React from 'react'
 import VideoCard from '../utils/VideoCard'
 
 function Funzone() {
