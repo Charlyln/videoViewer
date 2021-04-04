@@ -10,7 +10,7 @@ function VideoCard({ video }) {
       <Link to={`/video/${id}`}>
         <div className="bg-gray-800 shadow-lg rounded-lg overflow-hidden my-4 mx-4">
           <img
-            className="w-full  object-cover object-center"
+            className="w-full object-cover object-center"
             src={poster || 'https://via.placeholder.com/300x168'}
             alt={name}
           />
@@ -21,18 +21,20 @@ function VideoCard({ video }) {
               </h3>
             </div>
             {Tags.length === 0 ? (
-              <p className="text-1xl font-semibold text-white whitespace-nowrap line-through">
+              <p className="text-1xl text-white whitespace-nowrap line-through">
                 {`Tags`}
               </p>
             ) : (
-              Tags.map((tag) => (
-                <p
-                  key={tag.id}
-                  className="text-1xl font-semibold text-white whitespace-nowrap"
-                >
-                  {tag.name}
-                </p>
-              ))
+              <div className="flex overflow-ellipsis overflow-hidden">
+                {Tags.map((tag) => (
+                  <div
+                    key={tag.id}
+                    className="flex text-1xl text-white whitespace-nowrap mx-1"
+                  >
+                    <p>{`#${tag.name}`}</p>
+                  </div>
+                ))}
+              </div>
             )}
           </div>
         </div>
