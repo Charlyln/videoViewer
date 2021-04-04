@@ -25,11 +25,9 @@ function Home() {
   console.log(data)
 
   return (
-    <div>
+    <div className="cardsContainer">
       {data.allVideos.items.map((video) => (
-        <div key={video.id}>
-          <VideoCard video={video} />
-        </div>
+        <VideoCard video={video} key={video.id} />
       ))}
     </div>
   )
