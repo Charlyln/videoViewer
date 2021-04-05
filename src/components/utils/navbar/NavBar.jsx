@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../../../logo/play.png'
 
 function NavBar() {
   return (
@@ -9,14 +10,10 @@ function NavBar() {
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/">
-                <img
-                  className="block h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                  alt="Workflow"
-                />
+                <img className="block h-8 w-auto" src={logo} alt="Workflow" />
               </Link>
             </div>
-            <div className="hidden sm:block sm:ml-6 ">
+            <div className="hidden sm:block ml-auto">
               <div className="flex space-x-4">
                 {links.map((link) => (
                   <Link

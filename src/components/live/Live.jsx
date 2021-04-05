@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import styles from './Live.module.css'
-import Home from '../home/Home'
+import Title from '../utils/cssComponents/Title'
+import RenderData from '../utils/renderData/RenderData'
+import { ALL_LIMIT_5 } from '../utils/queries/ALL_LIMIT_5'
+import SubTitle from '../utils/cssComponents/SubTitle'
 
 function Live() {
   const videoRef = useRef()
@@ -10,20 +13,17 @@ function Live() {
   }, [])
 
   return (
-    <div className="my-5 mx-5">
-      <h1 className="text-2xl font-semibold my-5">Live</h1>
-      <video className={styles.video} ref={videoRef} controls autoPlay />
+    <>
+      <Title name={'Live'} />
+      <div className="my-5 mx-5">
+        <video className={styles.video} ref={videoRef} controls autoPlay />
 
-      <div className="my-10 mx-10">
-        <Home isInLiveSection={true} />
+        <div className="my-10 mx-10">
+          <SubTitle name={'Other videos'} />
+          <RenderData query={ALL_LIMIT_5} isUnder={true} />
+        </div>
       </div>
-      <button
-          className=" hover:text-gray-300 hover:bg-gray-500 bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium my-5 mx-5"
-          
-        >
-          More
-        </button>
-    </div>
+    </>
   )
 }
 
