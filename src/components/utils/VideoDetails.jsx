@@ -1,6 +1,9 @@
 import React from 'react'
-import { gql, useQuery } from '@apollo/client'
 import { useHistory, useParams } from 'react-router'
+import { gql } from 'apollo-boost'
+import { useQuery } from '@apollo/react-hooks'
+import Testimonials from '../testimonials/Testimonials'
+import Funzone from '../funzone/Funzone'
 
 function VideoDetails() {
   const { id } = useParams()
@@ -55,6 +58,18 @@ function VideoDetails() {
           ))
         )}
       </div>
+
+      <div className="my-10 mx-10">
+        <h1 className="text-1xl font-semibold  py-2 px-2 ">Other videos</h1>
+
+        {history.location.state &&
+        history.location.state.from === '/testimonials' ? (
+          <Testimonials isInVideoDetails={true} />
+        ) : (
+          <Funzone isInVideoDetails={true} />
+        )}
+      </div>
+
       <div className="my-10 mx-10">
         <button
           className=" hover:text-gray-300 hover:bg-gray-500 bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium "
