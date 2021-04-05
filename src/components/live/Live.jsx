@@ -7,8 +7,10 @@ import SubTitle from '../utils/cssComponents/SubTitle'
 
 function Live() {
   const videoRef = useRef()
+
   useEffect(() => {
     videoRef.current.src =
+      process.env.REACT_APP_STREAMURL ||
       'https://sample-videos.com/video123/mp4/240/big_buck_bunny_240p_10mb.mp4'
   }, [])
 
