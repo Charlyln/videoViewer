@@ -1,0 +1,16 @@
+.video {
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .video {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .video {
+    width: 70%;
+  }
+}
