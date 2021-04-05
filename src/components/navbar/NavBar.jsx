@@ -16,7 +16,7 @@ function NavBar() {
                 />
               </Link>
             </div>
-            <div className="hidden sm:block sm:ml-6 ">
+            <div className="hidden sm:block ml-auto">
               <div className="flex space-x-4">
                 {links.map((link) => (
                   <Link
