@@ -2,12 +2,12 @@ import React from 'react'
 import { useHistory, useParams } from 'react-router'
 import { gql } from 'apollo-boost'
 import { useQuery } from '@apollo/react-hooks'
-import { FUNZONE_LIMIT_5 } from './queries/FUNZONE_LIMIT_5'
-import { TESTIMONIALS_LIMIT_5 } from './queries/TESTIMONIALS_LIMIT_5'
-import VideoDisplay from './VideoDisplay'
-import Title from './cssComponents/Title'
-import SubTitle from './cssComponents/SubTitle'
-import Button from './cssComponents/Button'
+import { FUNZONE_LIMIT_5 } from '../utils/queries/FUNZONE_LIMIT_5'
+import { TESTIMONIALS_LIMIT_5 } from '../utils/queries/TESTIMONIALS_LIMIT_5'
+import RenderData from '../utils/renderData/RenderData'
+import Title from '../utils/cssComponents/Title'
+import SubTitle from '../utils/cssComponents/SubTitle'
+import Button from '../utils/cssComponents/Button'
 
 function VideoDetails() {
   const { id } = useParams()
@@ -67,7 +67,7 @@ function VideoDetails() {
       <div className="my-10 mx-10">
         <SubTitle name={'Other videos'} />
 
-        <VideoDisplay
+        <RenderData
           query={
             history.location.state &&
             history.location.state.from === '/testimonials'

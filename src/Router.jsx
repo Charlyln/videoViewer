@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import NavBar from './components/navbar/NavBar'
+import NavBar from './components/utils/navbar/NavBar'
 import Home from './components/home/Home'
 import Live from './components/live/Live'
 import Funzone from './components/funzone/Funzone'
 import Testimonials from './components/testimonials/Testimonials'
-import VideoDetails from './components/utils/VideoDetails'
+import VideoDetails from './components/videoDetails/VideoDetails'
 
 function Router() {
   return (

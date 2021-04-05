@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import styles from './Live.module.css'
 import Title from '../utils/cssComponents/Title'
-import VideoDisplay from '../utils/VideoDisplay'
+import RenderData from '../utils/renderData/RenderData'
 import { ALL_LIMIT_5 } from '../utils/queries/ALL_LIMIT_5'
 import SubTitle from '../utils/cssComponents/SubTitle'
 
@@ -20,7 +20,7 @@ function Live() {
 
         <div className="my-10 mx-10">
           <SubTitle name={'Other videos'} />
-          <VideoDisplay query={ALL_LIMIT_5} isUnder={true} />
+          <RenderData query={ALL_LIMIT_5} isUnder={true} />
         </div>
       </div>
     </>

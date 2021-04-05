@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import VideoCard from './VideoCard'
+import VideoCard from '../videoCard/VideoCard'
 import { useQuery } from '@apollo/react-hooks'
-import Button from './cssComponents/Button'
+import Button from '../cssComponents/Button'
 
-function VideoDisplay({ query, isUnder }) {
+function RenderData({ query, isUnder }) {
   const [viewAllVideos, setViewAllVideos] = useState(false)
   const { loading, error, data, fetchMore } = useQuery(query)
 
@@ -63,4 +63,4 @@ function VideoDisplay({ query, isUnder }) {
   )
 }
 
-export default VideoDisplay
+export default RenderData
