@@ -43,6 +43,7 @@ function Home({ isInLiveSection }) {
 
   return (
     <>
+      <h1 className="text-2xl font-semibold py-5 px-5 ">Home</h1>
       <div className="cardsContainer">
         {data.allVideos.items.map((video) => (
           <VideoCard video={video} key={video.id} />
@@ -51,7 +52,7 @@ function Home({ isInLiveSection }) {
 
       {!isInLiveSection ? (
         <button
-          className=" hover:text-gray-300 hover:bg-gray-500 bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium "
+          className=" hover:text-gray-300 hover:bg-gray-500 bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium my-5 mx-5"
           onClick={fetchMoreVideos}
         >
           More
