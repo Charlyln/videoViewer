@@ -6,11 +6,12 @@ import './index.css'
 import Router from './Router'
 import { Context } from './Context'
 
-const key = process.env.REACT_APP_KEY
+const key = "x-account-key"
 const keyValue = process.env.REACT_APP_KEYVALUE
+const endPoint = process.env.REACT_APP_ENDPOINT
 
 const client = new ApolloClient({
-  uri: 'https://staging-graphql-service.onrewind.tv/graphql',
+  uri: endPoint,
   headers: {
     [key]: keyValue
   }
